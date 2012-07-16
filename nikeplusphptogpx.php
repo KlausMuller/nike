@@ -1,36 +1,5 @@
 <?
 
-/*
-
-Import batch example:
-
-
-	require_once 'lib/init.php'; // init $n stuff (login)
-
-	$dir = "import";
-
-	$runIds = array(2011092192, 2011419912, 2011752618, 2012222154, 2012544979);
-	               
-	foreach($runIds as $runId) {
-		$fileName = sprintf('%s/%s.gpx', $dir, $runId);
-		if(!file_exists($fileName)) {                     
-			echo "importing run " . $fileName . "\n";
-			$run = $n->run($runId);	
-
-			if($run === NULL) {
-				echo "cannot import " . $runId . "\n";
-				continue;                    
-		    }
-			file_put_contents($fileName, $n->toGpx($run)); 
-		}
-	}
-
-
-
-
-
-*/
-
 class NikePlusPHPGpxExport extends NikePlusPHP {
 	/**
      * toGpx()
