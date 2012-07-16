@@ -1,6 +1,9 @@
-<?php
+<?
+
+// https://github.com/eagereyes/nike2gpx/blob/master/nike2gpx.py
+
 class NikePlusPHPGpxExport extends NikePlusPHP {
-     /**
+	/**
      * toGpx()
      * outputs a run object to a runtastic importable gpx document
      *
@@ -13,6 +16,8 @@ class NikePlusPHPGpxExport extends NikePlusPHP {
 		$activity = $run->activity;
 		$waypoints = $run->activity->geo->waypoints;
 		$startTime = strtotime($run->activity->startTimeUtc);
+		$name = 'Nike+ ' . $run->activity->name;
+		$description = $run->activity->tags->note;
 		$heartRate = null;
 		$distance = null;
 		
@@ -38,7 +43,8 @@ class NikePlusPHPGpxExport extends NikePlusPHP {
 		
 		// metadata
 		$b->startElement('metadata');    
-		$b->writeElement('name', 'metadataName ' . time());     
+		$b->writeElement('name', $name);
+		$b->writeElement('desc', $description);     
 		// get min/max lat/lng                               
 		$minLon = 10000;
 		$maxLon = -10000;
