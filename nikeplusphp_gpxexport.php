@@ -1,6 +1,6 @@
 <?php
 class NikePlusPHPGpxExport extends NikePlusPHP {
-	/**
+     /**
      * toGpx()
      * outputs a run object to a runtastic importable gpx document
      *
