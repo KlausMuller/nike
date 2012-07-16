@@ -4,7 +4,7 @@
 
 Import batch example:
 
-<?php 
+
 	require_once 'lib/init.php'; // init $n stuff (login)
 
 	$dir = "import";
@@ -24,7 +24,7 @@ Import batch example:
 			file_put_contents($fileName, $n->toGpx($run)); 
 		}
 	}
-?>
+
 
 
 
